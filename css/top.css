@@ -1,0 +1,352 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#top {
+  /*headerを全画面で見せる*/
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#top:before {
+  /*headerの疑似要素に背景画像を指定*/
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 5%;
+  z-index: -1;
+  width: 90%;
+  height: 100vh;
+  background: url("../image/top-top.jpg") no-repeat center; /*背景画像設定※オリジナル画像を設定してください*/
+  background-size: cover;
+}
+#main-container {
+  /*下のかぶさるエリアの指定*/
+  position: relative;
+  z-index: 1;
+  background: url("../image/bg.png");
+  background-size: contain;
+}
+@media (max-width:1280px) {
+  #top:before {
+    left: 0;
+    width: 100%;
+  }
+}
+/*h2のアニメーション*/
+.blur {
+  animation-name: blurAnime;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.blurTrigger {
+  opacity: 0;
+}
+
+@media (min-width:960px) {
+  .header nav li a {
+    display: block;
+    padding: 5px 35px 0;
+    color: #FFF;
+    text-decoration: none;
+    height: 90px;
+  }
+}
+.section-top__image-message {
+  color: #FFF;
+ }
+
+.section-top h2 {
+  padding-top: 200px;
+  text-shadow: 0 10px 10px black;
+}
+.section-top p {
+  padding-top: 250px;
+  text-shadow: 0 10px 10px black;
+}
+
+
+@media (min-width:480px){
+  .br-pc {
+    display: none;
+  }
+}
+
+
+/*活動予定*/
+.section-schedule {
+  padding: 80px 0;
+  height: 30vh;
+}
+/*最新情報*/
+.section-information {
+  margin: 80px auto;
+}
+.section-information__twitter {
+  display: inline-flex;
+}
+@media (max-width:450px) {
+  .section-information__twitter {
+    width: 80vw;
+  }
+}
+@media (min-width:960px) {
+  .section-schedule, .section-information {
+    display: inline-flex;
+    margin: 100px;
+    height: 100vh;
+  }
+}
+/*演舞一覧*/
+.section-enbu {
+  padding: 80px 0 20px 0;
+  background-color: rgba(208, 208, 208, 0.5);
+}
+.section-enbu ul ol {
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-around;
+}
+.section-enbu ol img {
+  width: 80vw;
+  height: 40vw;
+  object-fit: cover;
+  margin: 35px 35px 35px;
+}
+.section-enbu h3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px auto 50px;
+}
+.enbu-btn a {
+  color: #000;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  width: 200px;
+  margin: 50px auto;
+  padding: 2rem 3rem;
+  border: 1px solid #000;
+  transition: 0.5s;
+}
+.enbu-btn a:hover {
+  color: #fff;
+  background: #000;
+}
+/*==================================================
+スタート時は要素自体を透過0にするためのopacity:0;を指定する
+===================================*/
+.box {
+  opacity: 0;
+}
+/*==================================================
+動かしたい動き（今回は” ふわっ” を採用）
+===================================*/
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width:960px) {
+  .section-enbu ol img {
+    width: 40vw;
+    height: 25vw;
+  }
+}
+@media (max-width:600px) {
+  .enbu-btn a {
+    font-size: 0.8em;
+    padding: 1rem 2rem;
+    width: 120px;
+  }
+}
+/*オリガミとは*/
+.section-about {
+  margin: 80px 0 0 0;
+}
+.section-about img {
+  width: 80vw;
+  height: 50vw;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+.btn-wrapper {
+  display: flex;
+  position: relative;
+  top: -40px;
+  left: 30%;
+}
+.btn-s {
+  display: block;
+  width: 40vw;
+  height: 40vw;
+  background: rgba(244, 80, 80, 0.2);
+  position: relative;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+.btn {
+  position: relative;
+  background-color: #FFF;
+  width: 50vw;
+  height: 50vw;
+  transform: rotate(45deg);
+  top: -25px;
+  left: -30%;
+  z-index: 2;
+  box-shadow: 7px 7px 25px -5px rgba(0, 0, 0, 0.6)
+}
+.btn a {
+  color: #000;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  width: 200px;
+  margin: auto;
+  padding: 2rem 3rem;
+  border: 1px solid #000;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+  transform: rotate(-45deg);
+  height: 23px;
+  top: 40%;
+  left: 0%;
+  box-shadow: none;
+}
+.btn a:hover {
+  color: #fff;
+  background: #000;
+}
+@media (max-width:600px) {
+  .btn a {
+    padding: 1rem 2rem;
+    width: 130px;
+  }
+}
+@media (min-width:960px) {
+  .section-about {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 5%;
+  }
+  .section-about img {
+    margin-bottom: 0;
+    width: 50vw;
+    height: 30vw;
+  }
+  .btn-wrapper {
+    display: block;
+    position: relative;
+    width: 20vw;
+    top: -110px;
+    left: 3%;
+  }
+  .btn-s {
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    z-index: -20;
+    top: 30%;
+    left: 35%;
+  }
+  .btn {
+    width: 27vw;
+    height: 27vw;
+    top: -20%;
+    left: -30%;
+  }
+}
+@media (min-width:1440px) {
+  .btn a {
+    width: 250px;
+  }
+}
+/*メンバー紹介*/
+.section-member {
+  padding-bottom: 80px;
+}
+.section-member img {
+  width: 80vw;
+  height: 50vw;
+  object-fit: cover;
+  position: relative;
+  top: -30px;
+  z-index: 0;
+}
+.btn-wrapper_member {
+  display: flex;
+  position: relative;
+  top: -40px;
+  right: 0%;
+}
+.btn-s_member {
+  display: block;
+  width: 40vw;
+  height: 40vw;
+  background: rgba(144, 222, 176, 0.2);
+  position: relative;
+  transform: rotate(45deg);
+  left: 30%;
+  z-index: 0;
+}
+.btn-member {
+  z-index: 3;
+}
+@media (min-width:960px) {
+  .section-member {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: row-reverse;
+    left: 5%;
+    top: -90px;
+    margin: 80px auto 0;
+  }
+  .section-member img {
+    margin-bottom: 0;
+    width: 50vw;
+    height: 30vw;
+  }
+  .btn-wrapper_member {
+    display: block;
+    position: relative;
+    width: 20vw;
+    top: -125px;
+    left: 2%;
+  }
+  .btn-s_member {
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    z-index: -20;
+    top: 30%;
+    left: -60%;
+  }
+}
