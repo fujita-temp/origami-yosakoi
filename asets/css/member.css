@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/* CSS Document */
+#top {
+  /*headerを全画面で見せる*/
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#top:before {
+  /*headerの疑似要素に背景画像を指定*/
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 5%;
+  z-index: -1;
+  width: 90%;
+  height: 100vh;
+  background: url("../image/top-member.jpg") no-repeat center; /*背景画像設定※オリジナル画像を設定してください*/
+  background-size: cover;
+}
+#main-container {
+  /*下のかぶさるエリアの指定*/
+  position: relative;
+  z-index: 1;
+  background: url("../image/bg.png");
+  background-size: contain;
+}
+@media (max-width:1280px) {
+  #top:before {
+    left: 0;
+    width: 100%;
+  }
+}
+.section-top__image {
+  height: 450px;
+  width: 100vw;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width:1160px) {
+  .section-top__image {
+    height: 710px;
+  }
+}
+.section-member {
+  padding: 80px 0;
+}
+.section-member p {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+}
+.section-member_people {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1160px;
+}
+.frame {
+  position: relative;
+  width: 195px;
+  height: 245px;
+  background-image: linear-gradient(-45deg, transparent 10px, #efefef 10px);
+  box-shadow: -12px 10px 10px -7px rgb(0, 0, 0, 0.5);
+  color: #000;
+}
+.frame:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  bottom: 0;
+  border-width: 0 0 14px 14px;
+  border-style: solid;
+  border-color: transparent #000 transparent;
+}
+.frame p {
+  padding: 20px;
+}
+.frame-1:after {
+  border-color: transparent #a20f10 transparent;
+}
+.frame-2:after {
+  border-color: transparent #294479 transparent;
+}
+.frame-3:after {
+  border-color: transparent #674dd4 transparent;
+}
+.frame-4:after {
+  border-color: transparent #ffdb32 transparent;
+}
+.frame-5:after {
+  border-color: transparent #fc3030 transparent;
+}
+.frame-6:after {
+  border-color: transparent #0687fe transparent;
+}
+.frame-7:after {
+  border-color: transparent #eba2da transparent;
+}
+.frame-8:after {
+  border-color: transparent #91eb71 transparent;
+}
+.section-member_people img {
+  width: 195px;
+  height: 145px;
+  object-fit: cover;
+}
+.section-gallery {
+  padding: 100px 0;
+}
+.slider img {
+  width: 100%; /*スライダー内の画像を横幅100%に*/
+  height: 250px;
+  object-fit: cover;
+}
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+.slider .slick-slide {
+  margin: 0 10px; /*スライド左右の余白調整*/
+}
+.blur {
+  animation-name: blurAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes blurAnime {
+  from {
+    filter: blur(10px);
+    transform: scale(1.02);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.blurTrigger {
+  opacity: 0;
+}

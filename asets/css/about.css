@@ -1,0 +1,290 @@
+@charset "UTF-8";
+/* CSS Document */
+#top{
+	/*headerを全画面で見せる*/
+	width:100%;
+  height: 100vh;
+	position: relative;
+} 
+#top:before{
+	/*headerの疑似要素に背景画像を指定*/
+	content:"";
+	position:fixed;
+	top:0;
+	left:5%;
+	z-index:-1;
+	width:90%;
+	height: 100vh;
+	background:url("../image/top-about.jpg") no-repeat center;/*背景画像設定※オリジナル画像を設定してください*/
+	background-size:cover;
+}
+#main-container{
+	/*下のかぶさるエリアの指定*/
+	position: relative;
+	z-index:1;
+  background: url("../image/bg.png");
+  background-size: contain;
+}
+@media (max-width:1280px) {
+  #top:before{
+    left:0;
+    width:100%;
+  }
+}
+
+.section-top__image {
+  height:450px;
+  width: 100vw;
+  
+  background-position:center;
+  background-repeat: no-repeat;
+}
+@media (min-width:1160px) {
+  .section-top__image {
+    height: 710px;
+  }
+}
+/*オリガミとは*/
+.section-about {
+  padding: 80px 0;
+  background-color: rgba(208,208,208,0.5);
+}
+.section-about h3 {
+  margin: 80px auto;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.section-about p {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+}
+@media (min-width:960px) {
+  .section-about h3 {
+    font-size:3.0rem;
+  }
+.section-about p {
+  font-size:2.0rem;
+}
+.br-mobile {
+    display: none;
+  }
+}
+/*大切にしたいこと*/
+
+.section-important {
+  padding: 80px 0;
+}
+.section-important h2 {
+  margin-bottom: 100px;
+}
+.section-important h4 {
+  font-size: 2.0rem;
+}
+.section-important p {
+  font-size: 1.6rem;
+  margin-top: 35px;
+}
+.section-important_part img{
+  width: 80vw;
+  height: 50vw;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+  top: -50px;
+}
+.btn-wrapper {
+  display: flex;
+  position: relative;
+  top: -40px;
+  left: 30%;
+}
+.btn-s {
+  display: block;
+  width: 40vw;
+  height: 40vw;
+  background: rgba(244, 80, 80, 0.2);
+  position: relative;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+.btn {
+  position: relative;
+  background-color: #FFF;
+  width: 50vw;
+  height: 50vw;
+  transform: rotate(45deg);
+  top: -25px;
+  left: -30%;
+  z-index: 2;
+  box-shadow: 7px 7px 25px -5px rgba(0, 0, 0, 0.6)
+}
+
+.section-important_part-dis  {
+  color: #000;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  margin: auto;
+  transition: 0.5s;
+  position: relative;
+  z-index: 10;
+  transform: rotate(-45deg);
+  height: 23px;
+  top: 35%;
+  left: -8%;
+  box-shadow: none;
+}
+.btn-wrapper_r {
+    display: flex;
+    position: relative;
+    top: -40px;
+    right: 0%;
+  }
+  .btn-s_r {
+    display: block;
+    width: 40vw;
+    height: 40vw;
+    background: rgba(144, 222, 176, 0.2);
+    position: relative;
+    transform: rotate(45deg);
+    left:30%;
+    z-index: -20;
+  }
+.btn-s_3 {
+  background: rgba(115, 161, 204, 0.2);
+  }
+.btn-s_4 {
+  background: rgba(243, 168, 22, 0.2);
+}
+
+@media (max-width:500px){
+  .section-important h4 {
+  font-size: 1.6rem;
+}
+.section-important p {
+  font-size: 1rem;
+  margin-top: 20px;
+}
+}
+@media (min-width:960px){
+  .section-important h2 {
+  margin-bottom: 150px;
+}
+  .section-important ul {
+    position: relative;
+    right: 5%;
+  }
+  .section-important_part ul li {
+    display:flex;
+    justify-content: center;
+    margin: -50px auto;
+  }
+  .section-important_part img {
+    margin-bottom: 0;
+    width: 50vw;
+    height: 30vw;
+    z-index: 0;
+  }
+  .btn-wrapper {
+    display: block;
+    position: relative;
+    width: 20vw;
+    top: -110px;
+    left: 3%;
+  }
+  .btn-s {
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    z-index: 0;
+    top: 30%;
+    left: 35%;
+  }
+  .btn {
+    width: 27vw;
+    height: 27vw;
+    top: -20%;
+    left: -30%;
+    z-index: 2;
+  }
+  .section-important_part_r {
+    position: relative;
+    flex-direction: row-reverse;
+    left: 10%;
+  }
+  .btn-wrapper_r {
+    display: block;
+    position: relative;
+    width: 20vw;
+    top: -125px;
+    left: 2%;
+  }
+  .btn-s_r {
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    z-index: -2;
+    top: 30%;
+    left: -60%;
+  }
+  
+  .section-important_part-2 {
+    flex-direction: row-reverse;
+  }
+  
+}
+.blur{
+	animation-name:blurAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes blurAnime{
+  from {
+	filter: blur(10px);
+	transform: scale(1.02);
+	opacity: 0;
+  }
+
+  to {
+	filter: blur(0);
+	transform: scale(1);
+	opacity: 1;
+  }
+}
+ 
+.blurTrigger{
+    opacity: 0;
+}
+/*==================================================
+スタート時は要素自体を透過0にするためのopacity:0;を指定する
+===================================*/
+
+.box{
+	opacity: 0;
+}
+
+/*==================================================
+動かしたい動き（今回は” ふわっ” を採用）
+===================================*/
+
+.fadeUp {
+animation-name:fadeUpAnime;
+animation-duration:1.5s;
+animation-fill-mode:forwards;
+opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
