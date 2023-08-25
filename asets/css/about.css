@@ -44,6 +44,30 @@
     height: 710px;
   }
 }
+
+/*======  縦線が動いてスクロールを促す =======*/
+
+
+
+/*Scrollテキストの描写*/
+.scrolldown1 span{
+  /*描画位置*/
+	position: absolute;
+   /*テキストの形状*/
+	color: #000;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+	content: "";
+    /*描画位置*/
+	position: absolute;
+	top: 0;
+    /*線の形状*/
+	background: #000;
+}
+
+
 /*オリガミとは*/
 .section-about {
   padding: 80px 0;
